@@ -1,0 +1,51 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- user_choose_bangalore
+- user_chose_bangalore_restaurant
+- user_ordered_items
+responses:
+  utter_greet:
+  - buttons:
+    - payload: Show me restaurants from Mumbai
+      title: Mumbai
+    - payload: Show me restaurants from Bangalore
+      title: Bangalore
+    text: Hey! Hope you are doing well. Please select the city below
+  utter_show_bangalore_restaurants:
+  - buttons:
+    - payload: I would like to order from 7 plates
+      title: 7 plates
+    - payload: I would like to order from Anugraha veg
+      title: Anugraha veg
+    text: Here are the list of restaurants available in Bangalore. Please select one
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_iamabot
+- utter_show_bangalore_restaurants
+- display_menu_items
+- user_order_received
+- restaurant_notified
